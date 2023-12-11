@@ -22,7 +22,6 @@ useEffect(() => {
     fetchQuizList();
 }, [])
 
-
 const fetchStartQuiz = async (quizId) => {
     const response = await fetch("http://localhost:8080/quizzes/start-new-game", {
         method: "POST",
