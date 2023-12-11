@@ -9,7 +9,7 @@ const QuizContainer = () => {
 
 const [quizList, setQuizList] = useState([]);
 const [currentQuiz, setCurrentQuiz] = useState({}); // not useful right now. Potentially in the future. 
-const [activeQuestion, setActiveQuestion] = useState({});
+const [activeQuestion, setActiveQuestion] = useState(null);
 
 
 const fetchQuizList = async () => {
@@ -51,7 +51,7 @@ const quizRoutes = createBrowserRouter([
             },
             {
                 path: "/question",
-                element: <Question/>
+                element: <Question activeQuestion={activeQuestion}/>
             },
             {
                 path: "/result",
