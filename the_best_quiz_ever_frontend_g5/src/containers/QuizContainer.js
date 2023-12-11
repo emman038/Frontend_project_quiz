@@ -31,7 +31,7 @@ useEffect(() => {
     return ( 
         <>
             <h1>Hello from Container</h1>
-            <QuizList />
+            <QuizList quizList={quizList} />
             <Question />
             <Result />
         </>

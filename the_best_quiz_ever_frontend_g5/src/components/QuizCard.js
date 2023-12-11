@@ -1,6 +1,8 @@
-const QuizCard = () => {
+const QuizCard = ({quiz}) => {
+
+
     return ( 
-        <h3>Hello QuizCard</h3>
+        <h3>{quiz.name}</h3>
      );
 }
  
