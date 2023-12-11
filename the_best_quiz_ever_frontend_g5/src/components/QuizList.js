@@ -10,7 +10,7 @@ const QuizList = ({quizList}) => {
     return ( 
         <>
             <h2>Hello from QuizList</h2>
-            {quizComponents}
+            {quizList ? quizComponents : <p>Loading</p>}
         </>
      );
 }
