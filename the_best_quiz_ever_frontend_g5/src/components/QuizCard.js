@@ -1,9 +1,15 @@
-const QuizCard = ({quiz}) => {
+const QuizCard = ({ quiz, handleStartQuiz }) => {
 
+    const handleButtonClick = () => {
+        handleStartQuiz(quiz);
+    }
 
-    return ( 
+    return (
+    <>
         <h3>{quiz.name}</h3>
-     );
-}
- 
+        <button onClick={handleButtonClick}>Start Quiz</button>
+    </>
+    );
+};
+
 export default QuizCard;
