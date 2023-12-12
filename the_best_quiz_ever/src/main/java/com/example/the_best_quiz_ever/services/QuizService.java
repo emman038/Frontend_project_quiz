@@ -46,6 +46,7 @@ public class QuizService {
 
     public Reply startQuiz(Long id) {
         Quiz quiz = quizRepository.findById(id).get();
+        resetQuiz(quiz);
         Long questionId = quiz.findFirstQuestionID();
         Question q1 = questionRepository.findById(questionId).get();
         Reply reply = new Reply(q1, null);
@@ -70,6 +71,8 @@ public class QuizService {
         if (/*quiz.getCurrentQuestion()*/ qNumber > quiz.getSize() - 1) {
             Outcome finalOutcome = processOutcome(quiz);
             OutcomeDTO finalResult = new OutcomeDTO(finalOutcome.getOutcome());
+            quiz.setCurrentQuestion(1l);
+            quizRepository.save(quiz);
             Reply reply = new Reply(null, finalResult);
             return reply;
         }
@@ -78,7 +81,7 @@ public class QuizService {
         quizRepository.save(quiz);
 
 //        return currentQ = nextQ
-        Question nextQ = questionRepository.findById(quiz.getCurrentQuestion()).get();
+        Question nextQ = questionRepository.findByQuestionNumberAndQuizId(quiz.getCurrentQuestion(), quiz.getId());
         return new Reply(nextQ, null);
     }
 
@@ -153,7 +156,7 @@ public class QuizService {
     }
 
     private  void resetQuiz(Quiz quiz){
-        quiz.setCurrentQuestion(quiz.findFirstQuestionID());
+        quiz.setCurrentQuestion(1l);
         for (Question question : quiz.getAllQuestions()){
             question.setOutcome(null);
             questionRepository.save(question);

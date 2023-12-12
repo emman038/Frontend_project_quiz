@@ -63,7 +63,7 @@ public class DataLoader implements ApplicationRunner {
         quiz1.addQuestion(q5);
 
 
-        quiz1.setCurrentQuestion(q1.getId());
+        quiz1.setCurrentQuestion(q1.getQuestionNumber());
         quizRepository.save(quiz1);
 
 //      create outcomes
@@ -194,7 +194,7 @@ public class DataLoader implements ApplicationRunner {
         questionRepository.save(q2_5);
         quiz2.addQuestion(q2_5);
 
-        quiz2.setCurrentQuestion(q2_1.getId());
+        quiz2.setCurrentQuestion(q2_1.getQuestionNumber());
         quizRepository.save(quiz2);
 
         Outcome mulan = new Outcome(quiz2, "Mulan");

@@ -21,7 +21,7 @@ public class Question {
     private Long id;
 
     @Column
-    private int questionNumber;
+    private long questionNumber;
 
     @Column
     private String questionText;
@@ -39,7 +39,7 @@ public class Question {
 
 //    constructors
 
-    public Question(Quiz quiz, String questionText, int questionNumber) {
+    public Question(Quiz quiz, String questionText, long questionNumber) {
         this.quiz = quiz;
         this.questionText = questionText;
         this.questionNumber = questionNumber;
@@ -95,11 +95,11 @@ public class Question {
         this.outcome = outcome;
     }
 
-    public int getQuestionNumber() {
+    public long getQuestionNumber() {
         return questionNumber;
     }
 
-    public void setQuestionNumber(int questionNumber) {
+    public void setQuestionNumber(long questionNumber) {
         this.questionNumber = questionNumber;
     }
 }
