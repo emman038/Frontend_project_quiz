@@ -2,8 +2,8 @@ const Answer = ({answer}) => {
 
     return ( 
         <li className="answer">
-            <p>{answer.text}</p>
-            <button></button>
+            <p>{answer.answerText}</p>
+            <button>Submit</button>
         </li>
     );
 }
