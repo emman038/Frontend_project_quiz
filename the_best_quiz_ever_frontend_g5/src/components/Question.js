@@ -1,7 +1,7 @@
 
 import Answer from "./Answer"
 
-const Question = ({ activeQuestion, patchNextQuestion, displayOutcome }) => {
+const Question = ({ activeQuestion, patchNextQuestion, currentResult}) => {
 
     if (!activeQuestion) {
         return <p>No active quiz right now, please start a quiz</p>;
@@ -9,7 +9,7 @@ const Question = ({ activeQuestion, patchNextQuestion, displayOutcome }) => {
 
     const answerComponents = activeQuestion.nextQuestion.answers.map((answer) => {
         console.log(answer)
-        return (<Answer answer={answer} key={answer.id} patchNextQuestion={patchNextQuestion} displayOutcome={displayOutcome}/>)
+        return (<Answer answer={answer} key={answer.id} patchNextQuestion={patchNextQuestion} activeQuestion={activeQuestion} currentResult={currentResult}/>)
     })
 
     return (

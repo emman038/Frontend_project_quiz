@@ -41,12 +41,6 @@ const handleStartQuiz = (quiz, answer) => {
     setCurrentQuiz(quiz);
 }
 
-
-const displayOutcome = (navigate) => {
-    activeQuestion.outcomeDTO ? navigate("/result") : navigate("/question");
-}
-
-
 const patchNextQuestion = async (answerId)=>{
     const quizId = currentQuiz.id;
     const submitAnswerDTO = {
@@ -67,7 +61,7 @@ const patchNextQuestion = async (answerId)=>{
         setActiveQuestion(data) 
     } else if (data.outcomeDTO) {
         setCurrentResult(data)
-        setActiveQuestion(null)
+        // setActiveQuestion(null)
     };
 
     
@@ -84,7 +78,7 @@ const quizRoutes = createBrowserRouter([
             },
             {
                 path: "/question",
-                element: <Question activeQuestion={activeQuestion} patchNextQuestion={patchNextQuestion} displayOutcome={displayOutcome}/>
+                element: <Question activeQuestion={activeQuestion} patchNextQuestion={patchNextQuestion} currentResult={currentResult}/>
             },
             {
                 path: "/result",
