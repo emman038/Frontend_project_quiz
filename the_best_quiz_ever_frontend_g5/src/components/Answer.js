@@ -1,7 +1,12 @@
-const Answer = ({answer, patchNextQuestion}) => {
+import {useNavigate} from "react-router-dom";
+
+const Answer = ({answer, patchNextQuestion, displayOutcome}) => {
+
+    const navigate = useNavigate();
 
     const handleSubmitAnswer = ()=>{
         patchNextQuestion(answer.id)
+        displayOutcome(navigate)
     }
 
     return ( 

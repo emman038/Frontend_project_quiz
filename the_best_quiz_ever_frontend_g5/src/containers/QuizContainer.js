@@ -10,6 +10,7 @@ const QuizContainer = () => {
 const [quizList, setQuizList] = useState([]);
 const [currentQuiz, setCurrentQuiz] = useState({}); // not useful right now. Potentially in the future. 
 const [activeQuestion, setActiveQuestion] = useState(null);
+const [currentResult, setCurrentResult] = useState("");
 
 
 const fetchQuizList = async () => {
@@ -40,12 +41,19 @@ const handleStartQuiz = (quiz, answer) => {
     setCurrentQuiz(quiz);
 }
 
+
+const displayOutcome = (navigate) => {
+    activeQuestion.outcomeDTO ? navigate("/result") : navigate("/question");
+}
+
+
 const patchNextQuestion = async (answerId)=>{
     const quizId = currentQuiz.id;
     const submitAnswerDTO = {
         qNumber : activeQuestion.nextQuestion.questionNumber,
         answerId : answerId
     }
+    console.log(submitAnswerDTO);
 
     const response = await fetch(`http://localhost:8080/quizzes/${quizId}`, {
         method: "PATCH",
@@ -53,8 +61,17 @@ const patchNextQuestion = async (answerId)=>{
         body: JSON.stringify(submitAnswerDTO)
     })
     const data = await response.json();
+    console.log(data);
+
+    if (!data.outcomeDTO) {
+        setActiveQuestion(data) 
+    } 
+    if (data.outcomeDTO) {
+        setCurrentResult(data)
+        setActiveQuestion(null)
+    }
+
     
-    setActiveQuestion(data);
 };
 
 const quizRoutes = createBrowserRouter([
@@ -68,7 +85,7 @@ const quizRoutes = createBrowserRouter([
             },
             {
                 path: "/question",
-                element: <Question activeQuestion={activeQuestion} patchNextQuestion={patchNextQuestion}/>
+                element: <Question activeQuestion={activeQuestion} patchNextQuestion={patchNextQuestion} displayOutcome={displayOutcome}/>
             },
             {
                 path: "/result",

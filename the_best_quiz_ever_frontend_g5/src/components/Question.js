@@ -1,15 +1,15 @@
 
 import Answer from "./Answer"
 
-const Question = ({ activeQuestion, patchNextQuestion }) => {
+const Question = ({ activeQuestion, patchNextQuestion, displayOutcome }) => {
 
     if (!activeQuestion) {
-        return <p>Loading...</p>;
+        return <p>No active quiz right now, please start a quiz</p>;
     }
 
     const answerComponents = activeQuestion.nextQuestion.answers.map((answer) => {
         console.log(answer)
-        return (<Answer answer={answer} key={answer.id} patchNextQuestion={patchNextQuestion}/>)
+        return (<Answer answer={answer} key={answer.id} patchNextQuestion={patchNextQuestion} displayOutcome={displayOutcome}/>)
     })
 
     return (
