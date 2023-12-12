@@ -30,14 +30,32 @@ const fetchStartQuiz = async (quizId) => {
     })
     const data = await response.json();
     setActiveQuestion(data);
-}
+};
 
-const handleStartQuiz = (quiz) => {
+const handleStartQuiz = (quiz, answer) => {
     const quizId = {
         id: quiz.id
     }
     fetchStartQuiz(quizId);
+    setCurrentQuiz(quiz);
 }
+
+const patchNextQuestion = async (answerId)=>{
+    const quizId = currentQuiz.id;
+    const submitAnswerDTO = {
+        qNumber : activeQuestion.nextQuestion.questionNumber,
+        answerId : answerId
+    }
+
+    const response = await fetch(`http://localhost:8080/quizzes/${quizId}`, {
+        method: "PATCH",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(submitAnswerDTO)
+    })
+    const data = await response.json();
+    
+    setActiveQuestion(data);
+};
 
 const quizRoutes = createBrowserRouter([
     {
@@ -50,7 +68,7 @@ const quizRoutes = createBrowserRouter([
             },
             {
                 path: "/question",
-                element: <Question activeQuestion={activeQuestion}/>
+                element: <Question activeQuestion={activeQuestion} patchNextQuestion={patchNextQuestion}/>
             },
             {
                 path: "/result",
