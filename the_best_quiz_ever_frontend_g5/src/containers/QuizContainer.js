@@ -65,11 +65,10 @@ const patchNextQuestion = async (answerId)=>{
 
     if (!data.outcomeDTO) {
         setActiveQuestion(data) 
-    } 
-    if (data.outcomeDTO) {
+    } else if (data.outcomeDTO) {
         setCurrentResult(data)
         setActiveQuestion(null)
-    }
+    };
 
     
 };
