@@ -63,9 +63,12 @@ const patchNextQuestion = async (answerId)=>{
         setCurrentResult(data)
         // setActiveQuestion(null)
     };
-
-    
 };
+
+const findCurrentQuestion = (quiz) => {
+    const currentQuestion = quiz.currentQuestion;
+    setActiveQuestion(currentQuestion);
+}
 
 const quizRoutes = createBrowserRouter([
     {
@@ -74,7 +77,7 @@ const quizRoutes = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <QuizList quizList={quizList} handleStartQuiz={handleStartQuiz}/>
+                element: <QuizList quizList={quizList} handleStartQuiz={handleStartQuiz} findCurrentQuestion={findCurrentQuestion}/>
             },
             {
                 path: "/question",
