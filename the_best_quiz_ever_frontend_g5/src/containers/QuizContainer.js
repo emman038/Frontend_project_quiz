@@ -22,7 +22,6 @@ const fetchQuizList = async () => {
 useEffect(() => {
     fetchQuizList();
 }, [activeQuestion])
-// console.log(quizList);
 
 const fetchStartQuiz = async (quizId) => {
     const response = await fetch("http://localhost:8080/quizzes/start-new-game", {
@@ -70,16 +69,13 @@ const findCurrentQuestion = (quiz) => {
     const findQuestion = quiz.allQuestions.find((question) => {
         return quiz.currentQuestion === question.questionNumber;
     });
-    console.log(findQuestion);
 
     const updatedActiveQuestion = {
         nextQuestion: findQuestion,
         outcomeDTO: null
     }
-    console.log(updatedActiveQuestion);
     setActiveQuestion(updatedActiveQuestion);
     setCurrentQuiz(quiz);
-    console.log(activeQuestion);
 }
 
 const quizRoutes = createBrowserRouter([
