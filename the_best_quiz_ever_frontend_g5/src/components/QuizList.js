@@ -6,6 +6,7 @@ const QuizList = ({quizList, handleStartQuiz, findCurrentQuestion}) => {
         return <QuizCard key={quiz.id} quiz={quiz} handleStartQuiz={handleStartQuiz} findCurrentQuestion={findCurrentQuestion} />
     })
 
+
     return ( 
         <>
             <h2>Hello from QuizList</h2>
