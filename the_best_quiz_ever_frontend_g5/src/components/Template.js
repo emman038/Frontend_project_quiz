@@ -18,7 +18,7 @@ const Template  = () => {
         </nav>
         </div>
 
-        <section>
+        <section className="outlet-container">
             <Outlet/>
         </section>
 

@@ -54,7 +54,7 @@ nav ul li a.visited {
 }
 
 footer {
-    margin-top: 50%;
+    margin-top: 40%;
 }
 
 /* .answer-container {
@@ -86,3 +86,15 @@ footer {
         grid-template-columns: 1fr;
     }   
 }
+/* 
+.question-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+} */
+/* 
+.outlet-container{
+    display: flex;
+    align-items: center;
+} */
