@@ -20,29 +20,42 @@ const ModalResult = ({currentResult}) => {
         border: '2px solid #000',
         boxShadow: 24,
         p: 4,
+        button: {
+            '&:hover': {
+                backgroundColor: '#FFF'
+            },
+        },
     };
 
 
     return ( 
         <div>
-            <Button onClick={handleOpen}>Open modal</Button>
+            
+            <Button 
+                sx={{
+                    bgcolor: 'green'
+                }} 
+                variant="contained" 
+                onClick={handleOpen}>
+                    Show Result
+            </Button>
+
             <Modal
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
+            <Box sx={style}>
+
                 <Typography id="modal-modal-title" variant="h6" component="h2">
-                    Text in a modal
+                    {currentResult.outcomeDTO.finalResult}
                 </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                </Typography>
-                </Box>
+                
+            </Box>
             </Modal>
     </div>
-     );
+    );
 }
- 
+
 export default ModalResult;
