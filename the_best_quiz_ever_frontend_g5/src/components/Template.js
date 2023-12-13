@@ -13,9 +13,6 @@ const Template  = () => {
                 <li>
                     <Link to = "/question"> Current Question!!!</Link>
                 </li>
-                <li>
-                    <Link to = "/result"> Result</Link>
-                </li>
             </ul>
         </nav>
 

@@ -77,6 +77,7 @@ const findCurrentQuestion = (quiz) => {
     }
     setActiveQuestion(updatedActiveQuestion);
     setCurrentQuiz(quiz);
+    setCurrentResult("");
 }
 
 const quizRoutes = createBrowserRouter([
@@ -91,10 +92,6 @@ const quizRoutes = createBrowserRouter([
             {
                 path: "/question",
                 element: <Question activeQuestion={activeQuestion} patchNextQuestion={patchNextQuestion} currentResult={currentResult}/>
-            },
-            {
-                path: "/result",
-                element: <Result/>
             }
         ]
     }
