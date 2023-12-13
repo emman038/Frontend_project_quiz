@@ -39,6 +39,7 @@ const handleStartQuiz = (quiz, answer) => {
     }
     fetchStartQuiz(quizId);
     setCurrentQuiz(quiz);
+    setCurrentResult("");
 }
 
 const patchNextQuestion = async (answerId)=>{

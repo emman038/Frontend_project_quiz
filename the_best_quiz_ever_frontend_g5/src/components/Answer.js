@@ -3,13 +3,13 @@ import { useEffect } from "react";
 
 const Answer = ({answer, patchNextQuestion, activeQuestion, currentResult}) => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    useEffect(()=>{
-        if(currentResult){
-            navigate("/result")
-        }
-    },[currentResult, activeQuestion]);
+    // useEffect(()=>{
+    //     if(currentResult){
+    //         navigate("/result")
+    //     }
+    // },[currentResult, activeQuestion]);
 
     const handleSubmitAnswer = ()=>{
         patchNextQuestion(answer.id);
