@@ -98,9 +98,9 @@ const quizRoutes = createBrowserRouter([
 ]);
 
     return ( 
-        <>
+        <section className="quiz-container">
             <RouterProvider router={quizRoutes}/>
-        </>
+        </ section>
     );
 }
 
