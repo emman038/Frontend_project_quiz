@@ -23,7 +23,7 @@ const Question = ({ activeQuestion, patchNextQuestion, currentResult}) => {
     return (
         <>
             <h2>{activeQuestion.nextQuestion.questionText}</h2>
-            <ul>{answerComponents}</ul>
+            <ul className="answer-container">{answerComponents}</ul>
         </>
     );
 

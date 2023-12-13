@@ -9,7 +9,7 @@ const QuizList = ({quizList, handleStartQuiz, findCurrentQuestion}) => {
 
     return ( 
         <>
-            <h2>Hello from QuizList</h2>
+            <h2>Quiz List</h2>
             {quizList ? quizComponents : <p>Loading</p>}
         </>
     );

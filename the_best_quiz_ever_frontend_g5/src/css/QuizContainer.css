@@ -53,5 +53,34 @@ nav ul li a.visited {
     color: pink; /* Change the color to your desired active link color */
 }
 
+footer {
+    margin-top: 50%;
+}
 
+/* .answer-container {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr 1fr));;
 
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr; */
+    /* gap: 0px; */
+
+.answer-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    grid-gap: 10px; /* Adjust the gap between items as needed */
+}
+
+.answer {
+    /* Styles for each grid item */
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* @media screen and  {
+    
+} */

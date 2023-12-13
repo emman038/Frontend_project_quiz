@@ -16,7 +16,7 @@ const Answer = ({answer, patchNextQuestion, activeQuestion, currentResult}) => {
     };
 
     return ( 
-        <li className="answer">
+        <li className="answer" >
             <p>{answer.answerText}</p>
             <button onClick={handleSubmitAnswer}>Submit</button>
         </li>
