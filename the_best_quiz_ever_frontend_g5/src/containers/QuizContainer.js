@@ -62,7 +62,7 @@ const patchNextQuestion = async (answerId)=>{
         setActiveQuestion(data) 
     } else if (data.outcomeDTO) {
         setCurrentResult(data)
-        // setActiveQuestion(null)
+        setActiveQuestion(null)
     };
 };
 

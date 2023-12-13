@@ -3,16 +3,16 @@ import ModalResult from "./ModalResult";
 
 const Question = ({ activeQuestion, patchNextQuestion, currentResult}) => {
 
-    if (!activeQuestion) {
-        return <p>No active quiz right now, please start a quiz</p>;
-    }
-
     if(currentResult){
         return (
            <>
             <ModalResult currentResult={currentResult}/>
            </>
         )
+    }
+
+    if (!activeQuestion) {
+        return <p>No active quiz right now, please start a quiz</p>;
     }
 
     const answerComponents = activeQuestion.nextQuestion.answers.map((answer) => {
