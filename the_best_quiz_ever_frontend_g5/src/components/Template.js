@@ -4,6 +4,7 @@ const Template  = () => {
     
     return ( 
         <>
+        <div className="title-nav-container">
         <h1>Best Quiz Ever</h1>
         <nav>
             <ul>
@@ -15,6 +16,7 @@ const Template  = () => {
                 </li>
             </ul>
         </nav>
+        </div>
 
         <section>
             <Outlet/>

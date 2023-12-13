@@ -10,7 +10,7 @@ const QuizCard = ({ quiz, handleStartQuiz, findCurrentQuestion }) => {
     }
 
     const generateResumeClick = () => {
-        if (quiz.currentQuestion > 1 && quiz.currentQuestion < 5) {
+        if (quiz.currentQuestion > 1 && quiz.currentQuestion <= 5) {
             return (<button onClick={resumeQuizClick}>Resume Quiz</button>)
         }
     }

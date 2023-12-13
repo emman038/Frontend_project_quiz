@@ -1,8 +1,57 @@
 .quiz-container {
+    border-radius: 30px;
     background-color: white;
     box-shadow: 5px 5px 50px black;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    align-items: center;
 }
+
+.title-nav-container {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5%;
+    background-color: pink;
+    height: 10%;
+    width: 50%;
+}
+
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 2%;
+
+}
+
+nav ul li {
+    background-color: white;
+    padding: 0.5%;
+    border-radius: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+
+nav ul li a.active {
+    color: #ff5733; /* Change the color to your desired active link color */
+}
+
+nav ul li a.visited {
+    color: pink; /* Change the color to your desired active link color */
+}
+
+
+
