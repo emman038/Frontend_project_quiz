@@ -10,7 +10,7 @@ const Question = ({ activeQuestion, patchNextQuestion, currentResult}) => {
     if(currentResult){
         return (
            <>
-            <ModalResult />
+            <ModalResult currentResult={currentResult}/>
            </>
         )
     }
