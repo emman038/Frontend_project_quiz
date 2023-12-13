@@ -4,7 +4,7 @@ const Template  = () => {
     
     return ( 
         <>
-        <h1>This is the container title</h1>
+        <h1>Best Quiz Ever</h1>
         <nav>
             <ul>
                 <li>
