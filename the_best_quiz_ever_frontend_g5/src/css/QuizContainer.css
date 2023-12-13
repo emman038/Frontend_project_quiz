@@ -81,6 +81,8 @@ footer {
     text-align: center;
 }
 
-/* @media screen and  {
-    
-} */
+@media screen and (max-width: 600px){
+    .answer-container{
+        grid-template-columns: 1fr;
+    }   
+}
