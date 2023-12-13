@@ -22,7 +22,7 @@ const fetchQuizList = async () => {
 useEffect(() => {
     fetchQuizList();
 }, [activeQuestion])
-console.log(quizList);
+// console.log(quizList);
 
 const fetchStartQuiz = async (quizId) => {
     const response = await fetch("http://localhost:8080/quizzes/start-new-game", {
@@ -48,7 +48,7 @@ const patchNextQuestion = async (answerId)=>{
         qNumber : activeQuestion.nextQuestion.questionNumber,
         answerId : answerId
     }
-    console.log(submitAnswerDTO);
+    // console.log(submitAnswerDTO);
 
     const response = await fetch(`http://localhost:8080/quizzes/${quizId}`, {
         method: "PATCH",
@@ -56,7 +56,7 @@ const patchNextQuestion = async (answerId)=>{
         body: JSON.stringify(submitAnswerDTO)
     })
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     if (!data.outcomeDTO) {
         setActiveQuestion(data) 
@@ -70,12 +70,16 @@ const findCurrentQuestion = (quiz) => {
     const findQuestion = quiz.allQuestions.find((question) => {
         return quiz.currentQuestion === question.questionNumber;
     });
+    console.log(findQuestion);
 
     const updatedActiveQuestion = {
-        questionText : findQuestion.questionText, 
-        answers : findQuestion.answers
+        nextQuestion: findQuestion,
+        outcomeDTO: null
     }
+    console.log(updatedActiveQuestion);
     setActiveQuestion(updatedActiveQuestion);
+    setCurrentQuiz(quiz);
+    console.log(activeQuestion);
 }
 
 const quizRoutes = createBrowserRouter([

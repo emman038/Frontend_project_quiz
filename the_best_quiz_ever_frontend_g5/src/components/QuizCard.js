@@ -25,7 +25,7 @@ const QuizCard = ({ quiz, handleStartQuiz, findCurrentQuestion }) => {
         <>
             <h3>{quiz.name}</h3>
             <button onClick={handleButtonClick}>Start Quiz</button>
-            {generateResumeClick}
+            {generateResumeClick()}
         </>
     );
 };
