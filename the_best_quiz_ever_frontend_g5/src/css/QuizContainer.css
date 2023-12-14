@@ -132,19 +132,26 @@ footer {
     width: 20vw;
 }
 
-.quiz-title, .quiz-button {
-    margin: 
+.quiz-title, .quiz-button{
+    margin: auto;
+}
+
+.quiz-card div{
+    margin: auto;
 }
 
 .animal-quiz {
     background-image: url("/public/assets/slothpanda.jpeg") ;
     background-size: cover;
-    width: 50%;
-    height: 50%;
+    width: 10vw;
+    height: 10vh;
 }
 
 .disney-princess-quiz{
-    background-image: url("/public/assets/princess.webp") ;
+    background-image: url("/public/assets/princess.webp");
+    background-size: cover;
+    width: 10vw;
+    height: 10vh;
 }
 
 @media screen and (max-width: 600px) {
