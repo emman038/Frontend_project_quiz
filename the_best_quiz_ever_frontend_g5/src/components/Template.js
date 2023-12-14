@@ -13,7 +13,7 @@ const Template  = () => {
                     <NavLink to = "/" activeClassName="active" className="link"> Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to = "/question" activeClassName="active" className="link"> Current Question!!!</NavLink>
+                    <NavLink to = "/question" activeClassName="active" className="link"> Current Question</NavLink>
                 </li>
             </ul>
         </nav>

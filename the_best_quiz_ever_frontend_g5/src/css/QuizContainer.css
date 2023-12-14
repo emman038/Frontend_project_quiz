@@ -104,10 +104,20 @@ footer {
     text-align: center;
 }
 
+.quizzes{
+    display: flex;
+    flex-direction: row;
+}
+
 .quiz-card {
-    margin-top: 2%;
+    margin: 20px 5%;
     border-radius: 5px;
     box-shadow: 5px 5px 10px grey;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: auto;
 }
 
 @media screen and (max-width: 600px) {
