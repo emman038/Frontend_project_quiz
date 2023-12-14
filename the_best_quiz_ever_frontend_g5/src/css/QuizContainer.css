@@ -18,6 +18,7 @@ h1 {
     margin-top: 5vh;
     margin-bottom: 5vh;
     align-items: center;
+    white-space: nowrap;
 }
 
 .title-nav-container {
@@ -27,7 +28,7 @@ h1 {
     justify-content: space-between;
     margin-top: 5%;
     height: 10%;
-    width: 50%;
+    width: 80%;
     box-shadow: 5px 5px 10px grey;
 }
 
@@ -110,14 +111,15 @@ footer {
 }
 
 .quiz-card {
-    margin: 20px 5%;
+    margin: 30% 5% 0px 0px;
     border-radius: 5px;
     box-shadow: 5px 5px 10px grey;
-    height: 5rem;
+    height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: auto;
+    width: 20rem;
 }
 
 @media screen and (max-width: 600px) {
