@@ -102,7 +102,7 @@ const QuizContainer = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                authorization:  `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmI0MzAyYTAtMGMxMS00NzZhLTlkMWMtYjNlMmVkZDA3Y2YzIiwidHlwZSI6ImFwaV90b2tlbiJ9.CJKmvRJcqUGdnBnw5nTddQAsnF4C2DSoXnaxxy67wt4`,
+                authorization:  `Bearer `, //insert api key
             },
             body: JSON.stringify({
                 providers: "openai",
