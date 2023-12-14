@@ -1,6 +1,11 @@
+
 h1 {
     color: white;
     font-size: 3rem;
+}
+
+h2 {
+    margin-top: 2vw;
 }
 
 .active {
@@ -8,10 +13,10 @@ h1 {
 }
 
 .quiz-container {
-    border-radius: 30px;
+    border-radius: 5vw;
     background-color: white;
-    box-shadow: 5px 5px 50px black;
-    width: 50%;
+    box-shadow: 5px 5px 2vw black;
+    width: 45vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,14 +27,14 @@ h1 {
 }
 
 .title-nav-container {
-    border-radius: 15px;
+    border-radius: 2vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 5%;
+    margin-top: 2vw;
     height: 10%;
     width: 80%;
-    box-shadow: 5px 5px 10px grey;
+    box-shadow: 0.5vw 0.5vw 0.5vw grey;
 }
 
 
@@ -38,16 +43,19 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 2%;
+    margin-bottom: 2vh;
 
 }
 
 .question-container {
-    width: 400px
+    width: 40vw;
 }
 
 .answer-container {
-    margin-top: 5%;
+    margin-top: 5vh; /* Use relative units */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2vw; /* Use relative units */
 }
 
 
@@ -106,8 +114,12 @@ footer {
 }
 
 .quizzes{
-    display: flex;
-    flex-direction: row;
+    margin-top: 1vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Adjust the minmax value as needed */
+    gap: 20px; /* Adjust the gap between quizzes */
+    justify-content: space-around; /* Adjust as needed */
+    align-items: stretch; /* Adjust as needed */
 }
 
 .quiz-card {
