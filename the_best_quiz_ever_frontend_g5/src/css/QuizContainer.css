@@ -65,7 +65,10 @@ a:visited {
 }
 
 a:hover {
-    background-color: #1AB28A;
+    transform: scale(1.5);
+    transition-property: font-size;
+    transition-duration: 0.3s;
+    font-size: 18px;
     text-decoration: none;
 }
 
