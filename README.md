@@ -10,8 +10,17 @@ An application that allows the user to take a personality quiz of their choice, 
 
 ## The Project's Aims
 ### For Users:
+* Allow user to select personality quiz of choice
+* Allow user to resume unfinished quiz
+* Show user their personality character profile
+
 ### For Developers:
+* Create react app with responsive CSS design
+
 ### How to use the Website:
+1. Select a quiz on the home page
+2. Answer each question with multiple choice answers
+3. Reach the end of the quiz to reveal your personality profile!
 
 
 ## MVP
