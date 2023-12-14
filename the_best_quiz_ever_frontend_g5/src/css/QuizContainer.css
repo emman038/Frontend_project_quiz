@@ -118,8 +118,24 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: auto;
     width: 20rem;
+}
+
+.quiz-title, .quiz-button {
+    margin: 
+}
+
+.animal-quiz {
+    background-image: url("/public/assets/slothpanda.jpeg") ;
+    background-size: cover;
+    width: 50%;
+    height: 50%;
+}
+
+.disney-princess-quiz{
+    background-image: url("/public/assets/princess.webp") ;
 }
 
 @media screen and (max-width: 600px) {

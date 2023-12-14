@@ -11,7 +11,7 @@ const QuizCard = ({ quiz, handleStartQuiz, findCurrentQuestion }) => {
 
     const generateResumeClick = () => {
         if (quiz.currentQuestion > 1 && quiz.currentQuestion <= 5) {
-            return (<button onClick={resumeQuizClick}>Resume Quiz</button>)
+            return (<button className="quiz-button" onClick={resumeQuizClick}>Resume Quiz</button>)
         }
     }
 
@@ -20,13 +20,23 @@ const QuizCard = ({ quiz, handleStartQuiz, findCurrentQuestion }) => {
         navigate("/question");
     }
 
+    const generateImage = () => {
+        const quizName = quiz.name;
+        const imageClassName = quizName.toLowerCase().split(/[\s]+/).join("-");
+        return imageClassName;
+    }
 
     return (
-        <div className="quiz-card first-color">
-            <h3>{quiz.name}</h3>
-            <button onClick={handleButtonClick}>Start Quiz</button>
-            {generateResumeClick()}
-        </ div>
+        <article>
+
+            <div className="quiz-card first-color">
+                <h3 className="quiz-title">{quiz.name}</h3>
+                <div className={generateImage()}> </div>
+                <button className="quiz-button" onClick={handleButtonClick}>Start Quiz</button>
+                {generateResumeClick()}
+            </ div>
+
+        </article>
     );
 };
 
