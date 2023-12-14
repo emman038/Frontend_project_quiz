@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Template  = () => {
     
@@ -9,10 +10,10 @@ const Template  = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to = "/" className="link"> Home</Link>
+                    <NavLink to = "/" activeClassName="active" className="link"> Home</NavLink>
                 </li>
                 <li>
-                    <Link to = "/question" className="link"> Current Question!!!</Link>
+                    <NavLink to = "/question" activeClassName="active" className="link"> Current Question!!!</NavLink>
                 </li>
             </ul>
         </nav>
