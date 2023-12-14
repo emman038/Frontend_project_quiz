@@ -5,7 +5,7 @@ const Template  = () => {
     
     return ( 
         <>
-        <div className="title-nav-container first-color">
+        <div className="title-nav-container">
         <h1>Best Quiz Ever</h1>
         <nav className="nav-bar">
             <ul>
@@ -24,7 +24,7 @@ const Template  = () => {
         </section>
 
         <footer>
-            <p>This is the footer</p>
+            <p>© M's Dawgz 2023</p>
         </footer>
         </>
      );
