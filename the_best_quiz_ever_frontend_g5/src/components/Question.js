@@ -1,12 +1,12 @@
 import Answer from "./Answer"
 import ModalResult from "./ModalResult";
 
-const Question = ({ activeQuestion, patchNextQuestion, currentResult}) => {
+const Question = ({ activeQuestion, patchNextQuestion, currentResult, imageUrl}) => {
 
     if(currentResult){
         return (
            <>
-            <ModalResult currentResult={currentResult}/>
+            <ModalResult currentResult={currentResult} imageUrl={imageUrl}/>
            </>
         )
     }
