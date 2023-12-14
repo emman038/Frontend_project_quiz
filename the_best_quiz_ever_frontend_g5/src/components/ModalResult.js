@@ -3,8 +3,9 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { useState } from 'react';
 
-const ModalResult = ({currentResult}) => {
+const ModalResult = ({currentResult, imageUrl}) => {
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -27,6 +28,11 @@ const ModalResult = ({currentResult}) => {
         },
     };
 
+    // useEffect (() => {
+        
+    // }, [currentResult])
+
+    console.log(imageUrl);
 
     return ( 
         <div>
@@ -51,6 +57,8 @@ const ModalResult = ({currentResult}) => {
                 <Typography id="modal-modal-title" variant="h6" component="h2">
                     {currentResult.outcomeDTO.finalResult}
                 </Typography>
+
+                <img src={imageUrl}  alt="result image"/>
                 
             </Box>
             </Modal>
