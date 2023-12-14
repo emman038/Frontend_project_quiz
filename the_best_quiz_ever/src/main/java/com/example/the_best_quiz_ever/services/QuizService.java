@@ -1,11 +1,10 @@
 package com.example.the_best_quiz_ever.services;
 
-import com.example.the_best_quiz_ever.model_DTOs.OutcomeDTO;
+import com.example.the_best_quiz_ever.model_DTOs.*;
 import com.example.the_best_quiz_ever.models.Answer;
 import com.example.the_best_quiz_ever.models.Outcome;
 import com.example.the_best_quiz_ever.models.Question;
 import com.example.the_best_quiz_ever.models.Quiz;
-import com.example.the_best_quiz_ever.model_DTOs.Reply;
 import com.example.the_best_quiz_ever.repositories.AnswerRepository;
 import com.example.the_best_quiz_ever.repositories.OutcomeRepository;
 import com.example.the_best_quiz_ever.repositories.QuestionRepository;
@@ -105,54 +104,7 @@ public class QuizService {
 
         return outcomeRepository.findById(winningOutcomeId).get();
 
-//        Question finalQuestion = questionRepository.findById(qNumber).get(); //get final question = 10
-//        Answer answer1 = finalQuestion.getAnswers().get(0); //get a37
-//        Answer answer2 = finalQuestion.getAnswers().get(1); //get a38
-//        Answer answer3 = finalQuestion.getAnswers().get(2); //get a39
-//        Answer answer4 = finalQuestion.getAnswers().get(3); //get a40
-//
-//        long outcome1Id = answer1.getOutcome().getId();  //get outcome Id for each answer a37 - oucomeid =1 (unless randomized)
-//        long outcome2Id = answer2.getOutcome().getId(); //get outcome Id for each answer a38 - oucomeid =2
-//        long outcome3Id = answer3.getOutcome().getId(); //get outcome Id for each answer a39 - oucomeid =3
-//        long outcome4Id = answer4.getOutcome().getId(); //get outcome Id for each answer a40 - oucomeid =4
-//
-//        int count1 = 0; //sets all outcome_id counts to 0
-//        int count2 = 0;
-//        int count3 = 0;
-//        int count4 = 0;
-//
-////      count for each outcome
-//        for (Long outcomeId : selectedOption) {
-//            if (outcomeId == outcome1Id) {
-//                count1 += 1;
-//            } else if (outcomeId == outcome2Id) {
-//                count2 += 1;
-//            } else if (outcomeId == outcome3Id) {
-//                count3 += 1;
-//            } else if (outcomeId == outcome4Id) {
-//                count4 += 1;
-//            }
-//
-//        }
-//        Long modeId = outcome1Id;
-//        int modeCount = count1;
-//
-//        if (count2 > modeCount) {
-//            modeCount = count2;
-//            modeId = outcome2Id;
-//        }
-//
-//        if (count3 > modeCount) {
-//            modeCount = count3;
-//            modeId = outcome3Id;
-//        }
-//
-//        if (count4 > modeCount) {
-//            modeCount = count4;
-//            modeId = outcome4Id;
-//        }
-//
-//        return outcomeRepository.findById(modeId).get();
+
     }
 
     private  void resetQuiz(Quiz quiz){
@@ -162,6 +114,54 @@ public class QuizService {
             questionRepository.save(question);
         }
     }
+
+
+    public String addNewQuiz(AddNewQuizDTO addNewQuizDTO) {
+        String quizName = addNewQuizDTO.getName();
+        Long currentQuestionNumber = 1L;
+        Quiz quiz = new Quiz(quizName, currentQuestionNumber);
+        quizRepository.save(quiz);
+        return "Quiz saved";
+    }
+
+
+    public String addNewQuestion(AddNewQuestionDTO addNewQuestionDTO) {
+        Quiz quiz = quizRepository.findById(addNewQuestionDTO.getQuizId()).get();
+        Long questionNumber = 1L;
+        if (!quiz.getAllQuestions().isEmpty()) {
+            questionNumber = (long) (quiz.getAllQuestions().size() + 1);
+        }
+
+
+        Question question = new Question(quiz, addNewQuestionDTO.getQuestionText(), questionNumber);
+        quizRepository.save(quiz);
+        questionRepository.save(question);
+
+        return "question added";
+    }
+
+    public String addAnswerToQuestion(AddNewAnswerDTO addNewAnswerDTO){
+        Question question = questionRepository.findById(addNewAnswerDTO.getQuestionId()).get();
+        Outcome outcome = outcomeRepository.findById(addNewAnswerDTO.getOutcomeId()).get();
+        String answerText = addNewAnswerDTO.getAnswerText();
+
+        Answer answer = new Answer(question, outcome, answerText);
+        answerRepository.save(answer);
+        return "answer saved";
+    }
+
+    public String addOutcomeToQuiz(AddNewOutcomeDTO addNewOutcomeDTO){
+        Quiz quiz = quizRepository.findById(addNewOutcomeDTO.getQuizId()).get();
+        String outcomeText = addNewOutcomeDTO.getOutcomeText();
+
+        Outcome outcome = new Outcome(quiz, outcomeText);
+        outcomeRepository.save(outcome);
+        return "outcome added";
+    }
+
+
+
+
 
 
 }
