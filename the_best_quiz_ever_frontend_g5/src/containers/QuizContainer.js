@@ -4,6 +4,7 @@ import Result from "../components/Result";
 import { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Template from "../components/Template";
+import App from "../App";
 
 const QuizContainer = () => {
 

@@ -5,6 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './css/QuizContainer.css';
 
+const fs = require('fs');
+
+// Read the configuration file
+const rawConfig = fs.readFileSync('config.json');
+const config = JSON.parse(rawConfig);
+// Access the API key
+const apiKey = config.apiKey;
+// Use apiKey in your application
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
