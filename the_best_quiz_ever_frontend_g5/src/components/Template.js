@@ -9,10 +9,10 @@ const Template  = () => {
         <nav>
             <ul>
                 <li>
-                    <Link to = "/"> Home</Link>
+                    <Link to = "/" className="link"> Home</Link>
                 </li>
                 <li>
-                    <Link to = "/question"> Current Question!!!</Link>
+                    <Link to = "/question" className="link"> Current Question!!!</Link>
                 </li>
             </ul>
         </nav>
