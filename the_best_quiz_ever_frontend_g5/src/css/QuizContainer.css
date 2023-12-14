@@ -3,15 +3,23 @@ h1 {
     font-size: 3rem;
 }
 
+h2 {
+    margin-top: 2vw;
+}
+
+.question-text {
+    width: 30vw;
+}
+
 .active {
     border-bottom: 4px solid #fff;
 }
 
 .quiz-container {
-    border-radius: 30px;
+    border-radius: 5vw;
     background-color: white;
-    box-shadow: 5px 5px 50px black;
-    width: 50%;
+    box-shadow: 5px 5px 2vw black;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,32 +30,35 @@ h1 {
 }
 
 .title-nav-container {
-    border-radius: 15px;
+    border-radius: 2vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 5%;
-    height: 10%;
+    margin-top: 2vw;
+    height: auto;
     width: 80%;
-    box-shadow: 5px 5px 10px grey;
+    box-shadow: 0.5vw 0.5vw 0.5vw grey;
 }
-
 
 ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 2%;
-
+    margin-bottom: 2vh;
 }
 
 .question-container {
-    width: 400px
+    width: 40vw;
 }
 
 .answer-container {
-    margin-top: 5%;
+    margin-top: 5vh;
+    /* Use relative units */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2vw;
+    /* Use relative units */
 }
 
 
@@ -101,41 +112,95 @@ footer {
 .answer {
     /* Styles for each grid item */
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 2vw;
     text-align: center;
 }
 
-.quizzes{
-    display: flex;
-    flex-direction: row;
+.quizzes {
+    margin-top: 1vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Adjust the minmax value as needed */
+    justify-content: space-around;
+    /* Adjust as needed */
+    align-items: stretch;
+    /* Adjust as needed */
 }
 
 .quiz-card {
-    margin: 1rem;
-    border-radius: 10px;
+    margin: 1.5vw;
+    border-radius: 2vw;
     box-shadow: 5px 5px 10px grey;
-    height: 10rem;
+    height: 20vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: auto;
-    width: 20rem;
+    width: 20vw;
 }
 
-.quiz-title, .quiz-button {
-    margin: 
+.quiz-title,
+.quiz-button {
+    margin: auto;
+}
+
+.quiz-title {
+    color: white;
+}
+
+.quiz-card div {
+    margin: auto;
 }
 
 .animal-quiz {
-    background-image: url("/public/assets/slothpanda.jpeg") ;
+    background-image: url("/public/assets/slothpanda.jpeg");
     background-size: cover;
-    width: 50%;
-    height: 50%;
+    width: 10vw;
+    height: 10vh;
 }
 
-.disney-princess-quiz{
-    background-image: url("/public/assets/princess.webp") ;
+.disney-princess-quiz {
+    background-image: url("/public/assets/princess.webp");
+    background-size: cover;
+    width: 10vw;
+    height: 10vh;
+}
+
+button {
+    background-color: #FBEEE0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: auto;
+    line-height: auto;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    height: 4vh;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+button:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    button {
+        min-width: 120px;
+        padding: 0 25px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -146,15 +211,17 @@ footer {
 
 
 .first-color {
-	background: #A6E4E7;
+    background: #A6E4E7;
 }
-	
+
 .second-color {
-	background: #F9F9F9;
+    background: #F9F9F9;
 }
+
 .third-color {
-	background: #EBCBAE;
+    background: #EBCBAE;
 }
+
 .fourth-color {
-	background: #8F8787;
+    background: #8F8787;
 }

@@ -7,7 +7,7 @@ const Template  = () => {
         <>
         <div className="title-nav-container first-color">
         <h1>Best Quiz Ever</h1>
-        <nav>
+        <nav className="nav-bar">
             <ul>
                 <li>
                     <NavLink to = "/" activeClassName="active" className="link"> Home</NavLink>
