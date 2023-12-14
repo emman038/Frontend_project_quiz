@@ -31,7 +31,7 @@ const QuizCard = ({ quiz, handleStartQuiz, findCurrentQuestion }) => {
 
             <div className="quiz-card first-color">
                 <h3 className="quiz-title">{quiz.name}</h3>
-                <div className={generateImage()}> </div>
+                <div className={generateImage()}><img /></div>
                 <button className="quiz-button" onClick={handleButtonClick}>Start Quiz</button>
                 {generateResumeClick()}
             </ div>
