@@ -2,6 +2,7 @@ package com.example.the_best_quiz_ever.services;
 
 import com.example.the_best_quiz_ever.model_DTOs.OutcomeDTO;
 import com.example.the_best_quiz_ever.model_DTOs.AddNewQuizDTO;
+import com.example.the_best_quiz_ever.model_DTOs.AddNewQuestionDTO;
 import com.example.the_best_quiz_ever.models.Answer;
 import com.example.the_best_quiz_ever.models.Outcome;
 import com.example.the_best_quiz_ever.models.Question;
@@ -124,6 +125,22 @@ public class QuizService {
         Quiz quiz = new Quiz(quizName, currentQuestionNumber);
         quizRepository.save(quiz);
         return "Quiz saved";
+    }
+
+
+    public String addNewQuestion(AddNewQuestionDTO addNewQuestionDTO) {
+        Quiz quiz = quizRepository.findById(addNewQuestionDTO.getQuizId()).get();
+        Long questionNumber = 1L;
+        if (!quiz.getAllQuestions().isEmpty()) {
+            questionNumber = (long) (quiz.getAllQuestions().size() + 1);
+        }
+
+
+        Question question = new Question(quiz, addNewQuestionDTO.getQuestionText(), questionNumber);
+        quizRepository.save(quiz);
+        questionRepository.save(question);
+
+        return "question added";
     }
 
 
