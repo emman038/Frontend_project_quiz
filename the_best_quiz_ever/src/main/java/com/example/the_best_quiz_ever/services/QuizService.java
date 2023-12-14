@@ -1,13 +1,10 @@
 package com.example.the_best_quiz_ever.services;
 
-import com.example.the_best_quiz_ever.model_DTOs.OutcomeDTO;
-import com.example.the_best_quiz_ever.model_DTOs.AddNewQuizDTO;
-import com.example.the_best_quiz_ever.model_DTOs.AddNewQuestionDTO;
+import com.example.the_best_quiz_ever.model_DTOs.*;
 import com.example.the_best_quiz_ever.models.Answer;
 import com.example.the_best_quiz_ever.models.Outcome;
 import com.example.the_best_quiz_ever.models.Question;
 import com.example.the_best_quiz_ever.models.Quiz;
-import com.example.the_best_quiz_ever.model_DTOs.Reply;
 import com.example.the_best_quiz_ever.repositories.AnswerRepository;
 import com.example.the_best_quiz_ever.repositories.OutcomeRepository;
 import com.example.the_best_quiz_ever.repositories.QuestionRepository;
@@ -142,6 +139,29 @@ public class QuizService {
 
         return "question added";
     }
+
+    public String addAnswerToQuestion(AddNewAnswerDTO addNewAnswerDTO){
+        Question question = questionRepository.findById(addNewAnswerDTO.getQuestionId()).get();
+        Outcome outcome = outcomeRepository.findById(addNewAnswerDTO.getOutcomeId()).get();
+        String answerText = addNewAnswerDTO.getAnswerText();
+
+        Answer answer = new Answer(question, outcome, answerText);
+        answerRepository.save(answer);
+        return "answer saved";
+    }
+
+    public String addOutcomeToQuiz(AddNewOutcomeDTO addNewOutcomeDTO){
+        Quiz quiz = quizRepository.findById(addNewOutcomeDTO.getQuizId()).get();
+        String outcomeText = addNewOutcomeDTO.getOutcomeText();
+
+        Outcome outcome = new Outcome(quiz, outcomeText);
+        outcomeRepository.save(outcome);
+        return "outcome added";
+    }
+
+
+
+
 
 
 }
