@@ -22,11 +22,11 @@ const QuizCard = ({ quiz, handleStartQuiz, findCurrentQuestion }) => {
 
 
     return (
-        <>
+        <div className="quiz-card first-color">
             <h3>{quiz.name}</h3>
             <button onClick={handleButtonClick}>Start Quiz</button>
             {generateResumeClick()}
-        </>
+        </ div>
     );
 };
 

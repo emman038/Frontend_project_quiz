@@ -1,3 +1,7 @@
+h1 {
+    color: white;
+}
+
 .quiz-container {
     border-radius: 30px;
     background-color: white;
@@ -17,7 +21,6 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 5%;
-    background-color: pink;
     height: 10%;
     width: 50%;
 }
@@ -81,17 +84,6 @@ footer {
     margin-top: 40%;
 }
 
-/* .answer-container {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr 1fr));;
-
-    /* grid-template-columns: 1fr 1fr; */
-/* grid-template-rows: 1fr 1fr; */
-/* gap: 0px; */
-
 .answer-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -107,6 +99,12 @@ footer {
     text-align: center;
 }
 
+.quiz-card {
+    margin-top: 2%;
+    border-radius: 5px;
+    
+}
+
 @media screen and (max-width: 600px) {
     .answer-container {
         grid-template-columns: 1fr;
@@ -114,15 +112,16 @@ footer {
 }
 
 
-/* 
-.question-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 75%;
-} */
-/* 
-.outlet-container{
-    display: flex;
-    align-items: center;
-} */
+.first-color {
+	background: #A6E4E7;
+}
+	
+.second-color {
+	background: #F9F9F9;
+}
+.third-color {
+	background: #EBCBAE;
+}
+.fourth-color {
+	background: #8F8787;
+}
