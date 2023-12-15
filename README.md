@@ -31,9 +31,8 @@ An application that allows the user to take a personality quiz of their choice, 
 ## Extensions
 * Add resume button functionality for each quiz ✅
 * Add media query to display answers in a responsive way for both web & mobile users ✅
-* Add counter/tracker for each question
-* Modify backend to accept the creation of new quizzes/questions ✅
-* Use Dall-E API to generate outcome images
+* Use Dall-E API to generate outcome images ✅
+* Modify backend to accept the creation of new quizzes/questions (nearly completed)
 * Create page with different character/personality profiles
 
 ## Diagrams
