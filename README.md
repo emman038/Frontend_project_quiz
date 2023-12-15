@@ -48,6 +48,10 @@ An application that allows the user to take a personality quiz of their choice, 
 
 <img width="873" alt="Screenshot 2023-12-14 at 12 30 06" src="https://github.com/Al-B-code/Frontend_project_quiz/assets/145555841/b53ef05b-7f3f-4aae-a56a-0878f412d96c">
 
+### Libraries used: 
+* Material UI 5.15.0
+* React 18.2.0"
+* React-router-dom 6.20.1
 
 ## Best Quiz Ever React App
 ### Quiz Container
