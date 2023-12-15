@@ -29,7 +29,7 @@ const QuizContainer = () => {
     const [imageData, setImageData] = useState(null);
     const [imageUrl, setImageUrl] = useState("");
 
-
+    // fetch the API
     const fetchQuizList = async () => {
         const response = await fetch("http://localhost:8080/quizzes");
         const data = await response.json();
@@ -40,6 +40,7 @@ const QuizContainer = () => {
         fetchQuizList();
     }, [activeQuestion])
 
+    // Start the quiz to display the questions of the quiz
     const fetchStartQuiz = async (quizId) => {
         const response = await fetch("http://localhost:8080/quizzes/start-new-game", {
             method: "POST",
@@ -59,6 +60,7 @@ const QuizContainer = () => {
         setCurrentResult("");
     }
 
+    // To update the current question of the quiz
     const patchNextQuestion = async (answerId) => {
         const quizId = currentQuiz.id;
         const submitAnswerDTO = {
