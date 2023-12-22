@@ -15,9 +15,14 @@ const Question = ({ activeQuestion, patchNextQuestion, currentResult, imageUrl})
         return <p>No active quiz right now, please start a quiz</p>;
     }
 
+    // Map the answers for the question
     const answerComponents = activeQuestion.nextQuestion.answers.map((answer) => {
-        console.log(answer)
-        return (<Answer answer={answer} key={answer.id} patchNextQuestion={patchNextQuestion} activeQuestion={activeQuestion} currentResult={currentResult}/>)
+        return (<Answer 
+            answer={answer} 
+            key={answer.id} 
+            patchNextQuestion={patchNextQuestion} 
+            activeQuestion={activeQuestion} 
+            currentResult={currentResult}/>)
     })
 
     return (
